@@ -12,6 +12,26 @@ main {
     flex-direction: column;
 }
 
+.mt-32 {
+    margin-top: 32px;
+}
+
+.mt-28 {
+    margin-top: 28px;
+}
+
+.mt-24 {
+    margin-top: 24px;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
 body {
     background-color: var(--color-lighter);
     margin: 0;
@@ -23,10 +43,40 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
 }
 
+h2 {
+    color: var(--color-secondary);
+}
+
 p {
     margin-bottom: 8px;
     margin-top: 0;
     color: var(--color-dark);
+}
+
+button {
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 12px;
+    outline: none;
+    border: 1px solid var(--color-secondary);
+    background-color: transparent;
+    padding: 12px 16px;
+}
+
+.active {
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-primary) !important;
+    color: #fff;
+}
+
+.blue-button {
+    border: 1px solid var(--color-primary) !important;
+    color: var(--color-primary) !important;
+}
+
+.bordered {
+    border: 1px solid var(--color-light);
+    border-radius: 12px;
 }
 
 .text-dark {
@@ -148,6 +198,52 @@ a {
     background-color: var(--color-primary);
 }
 
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.portfolio-content {
+    display: flex;
+    flex-direction: column;
+    margin: 24px 0;
+}
+
+.experience-card {
+    padding: 16px;
+    height: 252px;
+    display: flex;
+    align-items: center;
+}
+
+.experience-card .title {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.experience-card .title img {
+    width: 55px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.experience-card .title span {
+    color: var(--color-dark);
+    margin-top: 10px;
+    margin-bottom: 6px; 
+}
+
+.experience-card .title, .experience-card .content {
+    width: 50%;
+}
+
+.certificate img {
+    width: 100%;
+}
+
 @media only screen and (min-width: 1025px) {
     .for-desktop {
         display: block;
@@ -177,5 +273,15 @@ a {
         display: flex;
         flex-direction: column;
         max-width: 650px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .buttons-container {
+        gap: 8px;
+    }
+
+    button {
+        font-size: 14px;
     }
 }

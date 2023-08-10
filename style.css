@@ -1,0 +1,181 @@
+@import url("variables.css");
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Roboto:wght@400;700&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+main {
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    background-color: var(--color-lighter);
+    margin: 0;
+    padding: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 3px;
+    margin-top: 0;
+}
+
+p {
+    margin-bottom: 8px;
+    margin-top: 0;
+    color: var(--color-dark);
+}
+
+.text-dark {
+    color: var(--color-dark);
+}
+
+.for-desktop {
+    display: none;
+}
+
+.title-1 {   
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29px;
+    letter-spacing: 0em;
+}
+
+.title-2 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0em;
+}
+
+.text-1 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: 0em;
+}
+
+.text-2 { 
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+}
+
+.text-3 {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: 0em;
+}
+
+i {
+    color: #000;
+    width: 18px;
+    height: 18px;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+.box {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.box-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.cv-image {
+    width: 75.75%;
+    flex-shrink: 0;
+    margin: 0 auto;
+}
+
+.personal-info {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.personal-info .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.personal-info .description {
+    margin-top: 32px;
+}
+
+.skills-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills-container ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 8px;
+}
+
+.outer-bar {
+    width: 65%;
+    height: 10px;
+    background-color: var(--color-light);
+}
+
+.big-inner-bar {
+    width: 88.4%;
+    height: 100%;
+    background-color: var(--color-primary);
+}
+
+.small-inner-bar {
+    width: 77.3%;
+    height: 100%;
+    background-color: var(--color-primary);
+}
+
+@media only screen and (min-width: 1025px) {
+    .for-desktop {
+        display: block;
+    }
+
+    .cv-image {
+        width: 275px;
+        height: 265px;
+        margin: 0 32px 0 0;
+    }
+
+    .box {
+        padding: 32px;
+    }
+
+    .box-content {
+        flex-direction: row;
+    }
+
+    .personal-info .contact {
+        flex-direction: row;
+        gap: 140px;
+    }
+
+    .personal-info .description {
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        max-width: 650px;
+    }
+}

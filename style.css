@@ -28,10 +28,6 @@ main {
     margin-top: 16px;
 }
 
-.justify-between {
-    justify-content: space-between;
-}
-
 body {
     background-color: var(--color-lighter);
     margin: 0;
@@ -60,7 +56,12 @@ button {
     outline: none;
     border: 1px solid var(--color-secondary);
     background-color: transparent;
-    padding: 12px 16px;
+    height: 48px;
+    cursor: pointer;
+}
+
+.portfolio-content .buttons-container button {
+    min-width: 137px;
 }
 
 .active {
@@ -69,7 +70,7 @@ button {
     color: #fff;
 }
 
-.blue-button {
+.outlined {
     border: 1px solid var(--color-primary) !important;
     color: var(--color-primary) !important;
 }
@@ -198,6 +199,12 @@ a {
     background-color: var(--color-primary);
 }
 
+.projects .box-content .buttons-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px !important;
+}
+
 .buttons-container {
     display: flex;
     flex-direction: row;
@@ -236,15 +243,80 @@ a {
     margin-bottom: 6px; 
 }
 
+.experience-card .content span,
+.experience-card .content h3 {
+    display: none;
+}
+
 .experience-card .title, .experience-card .content {
     width: 50%;
 }
 
-.certificate img {
+.certificate:not(:first-child),
+.experience-card:not(:first-child) {
+    display: none;
+}
+
+.certificate .image {
+    background-image: url("./img/diploma_demo.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
     width: 100%;
+    height: 226px;
+}
+
+.certificate .text {
+    margin-top: 28px;
+}
+
+.projects .buttons-container {
+    justify-content: space-between;
+    margin-top: 32px;
+}
+
+.middle-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.skills {
+    order: 0;
+}
+
+.projects {
+    order: 1;
+}
+
+.portfolio {
+    order: 2;
+}
+
+.experience {
+    order: 3;
+}
+
+.certificates {
+    order: 4;
+}
+
+.carousel-section {
+    display: none;
+}
+
+@media only screen and (min-width: 600px) {
+    .cv-image {
+        width: 250px;
+        object-fit: contain;
+    }
 }
 
 @media only screen and (min-width: 1025px) {
+    .container {
+        max-width: 1448px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
     .for-desktop {
         display: block;
     }
@@ -265,7 +337,7 @@ a {
 
     .personal-info .contact {
         flex-direction: row;
-        gap: 140px;
+        justify-content: space-between;
     }
 
     .personal-info .description {
@@ -273,6 +345,245 @@ a {
         display: flex;
         flex-direction: column;
         max-width: 650px;
+    }
+
+    .middle-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 300px 390px 345px 120px;
+        grid-template-areas: 
+            "n1 n2"
+            "n3 n2"
+            "n3 n4"
+            "n5 n5";
+        column-gap: 24px;
+    }
+    
+    .skills {
+        order: 0;
+        grid-area: n1;
+        padding: 16px;
+    }
+
+    .skills .box-content {
+        flex-direction: column;
+    }
+
+    .skills-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .skills-container ul {
+        width: 463px;
+    }
+
+    .outer-bar {
+        width: 260px;
+    }
+
+    .projects {
+        order: 4;
+        grid-area: n5;
+        padding: 0 16px;
+    }
+
+    .projects .box-content {
+        flex-direction: column;
+    }
+
+    .projects .buttons-container {
+        justify-content: start;
+        margin-top: 16px;
+    }
+
+    .projects .buttons-container button {
+        min-width: 137px;
+    }
+
+    .projects .box-content .buttons-container {
+        display: flex;
+    }
+    
+    .portfolio {
+        order: 1;
+        grid-area: n2;
+        padding: 16px;
+    }
+
+    .portfolio .box-content {
+        flex-direction: column;
+    }
+
+    .portfolio .box-content img {
+        width: 100%;
+    }
+    
+    .experience {
+        order: 3;
+        grid-area: n4;
+        padding: 16px;
+    }
+
+    .experience .box-content {
+        flex-direction: column;
+    }
+
+    .experiences-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 16px;
+    }
+    
+    .experience-card {
+        height: auto;
+        align-items: unset;
+    }
+
+    .experience-card .title,
+    .experience-card .content {
+        width: auto;
+    }
+
+    .certificates {
+        order: 2;
+        grid-area: n3;
+        padding: 16px;
+    }
+
+    .certificates-container {
+        gap: 16px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .certificates .box-content {
+        flex-direction: column;
+    }
+
+    .certificate:not(:first-child) {
+        display: block;
+    }
+
+    .experience-card:not(:first-child) {
+        display: flex;
+    }
+
+    .experiences-container {
+        max-width: 600px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .experience-card .title span,
+    .experience-card .title h3 {
+        display: none;
+    }
+
+    .experience-card .content {
+        padding-left: 8px;
+    }
+
+    .experience-card .content span,
+    .experience-card .content h3 {
+        display: block;
+    }
+
+    .experience-card .content span {
+        color: var(--color-dark);
+        margin-bottom: 4px;
+    }
+
+    .experience-card .content h3 {
+        margin-bottom: 24px;
+    }
+
+    .certificate {
+        width: 342px;
+        border: 1px solid var(--color-light);
+        border-radius: 12px;
+        padding: 8px;
+        margin: 0 auto;
+    }
+
+    .certificate .image {
+        background-image: url("./img/diploma_demo_2.jpg");
+        height: 132px;
+    }
+
+    .certificate .text {
+        margin-top: 0;
+    }
+
+    .carousel-section {
+        display: block;
+    }
+
+    .carousel {
+        margin-top: 24px;
+    }
+
+    .sliders {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 16px;
+    }
+
+    .slide {
+        background-color: #fff;
+        border-radius: 12px;
+        padding: 16px; 
+    }
+
+    .slide-content {
+        padding: 0 48px;
+    }
+
+    .slide-content img {
+        width: 100%;
+    }
+
+    .slide-content button {
+        min-width: 137px;
+    }
+
+    .controls-container {
+        margin-top: 32px;
+        margin-bottom: 8px;
+    }
+
+    .controls {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .controls div {
+        border: 1px solid var(--color-secondary);
+        border-radius: 4px;
+        width: 34px;
+        height: 34px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .controls .icon {
+        border: none !important;
+        font-size: 28px;
+        padding: 0;
+        margin: 0;
+        width: 30px;
+        height: 25px;
+        transform: translate(-2px, 2px);
+    }
+
+    .arrow-left,
+    .arrow-right {
+        font-size: 36px;
     }
 }
 
